@@ -20,7 +20,7 @@ class DateTimeHelper extends AbstractHelper
     /**
      * @param string $format
      */
-    public function __construct(string $format = \DateTimeInterface::ATOM)
+    public function __construct(string $format)
     {
         $this->format = $format;
     }

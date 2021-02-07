@@ -15,6 +15,8 @@ use Interop\Container\ContainerInterface;
 final class DateTimeHelperFactory extends AbstractFactory
 {
     /**
+     * @noinspection PhpMissingParamTypeInspection
+     *
      * @param ContainerInterface $container
      * @param string             $requestedName
      * @param array|null         $options

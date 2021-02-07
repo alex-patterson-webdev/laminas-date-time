@@ -31,13 +31,14 @@ class DateTimeHelper extends AbstractHelper
      *
      * @return string
      */
-    public function __invoke(?\DateTimeInterface $dateTime, array $options = [])
+    public function __invoke(?\DateTimeInterface $dateTime, array $options = []): string
     {
         $format = $options['format'] ?? $this->format;
 
         if (null === $dateTime) {
             return '';
         }
+
         return $dateTime->format($format);
     }
 }

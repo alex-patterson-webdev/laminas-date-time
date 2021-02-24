@@ -10,29 +10,31 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
-    "laminas/laminas-mvc": "^3.1",
-    "alex-patterson-webdev/date-time": "^1.1",
-    "alex-patterson-webdev/laminas-factory": "^1"
+    "php": ">=7.4 || >=8.0",
+    "laminas/laminas-eventmanager" : "^3.3",
+    "laminas/laminas-modulemanager" : "^2.10",
+    "laminas/laminas-servicemanager" : "^3.0",
+    "laminas/laminas-view" : "^2.12.0",
+    "alex-patterson-webdev/date-time": "^2",
+    "alex-patterson-webdev/laminas-factory": "dev-feature/3.0.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.1"
+    "phpunit/phpunit": "^9.5"
   },
   "autoload": {
     "psr-4": {
-      "Arp\\LaminasDateTime\\\\": "src/"
+      "Arp\\LaminasDateTime\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ArpTest\\LaminasDateTime\\": "test/phpunit"
+      "ArpTest\\LaminasDateTime\\": "test/phpunit/"
     }
   },
   "scripts": {
     "test": "php vendor/bin/phpunit --coverage-clover=coverage.xml"
   },
   "config": {
-    "secure-http": false,
     "preferred-install": "dist",
     "optimize-autoloader": true,
     "sort-packages": true

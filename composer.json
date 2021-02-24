@@ -19,12 +19,12 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
-    "laminas/laminas-view": "^2.12.0",
+    "laminas/laminas-view": "^2.12",
     "laminas/laminas-hydrator" : "^3.2"
   },
   "suggest": {
-    "laminas/laminas-view" : "^2.12.0 to use the view helper date components",
-    "laminas/laminas-hydrator" : "^3.2 to use the view helper date components"
+    "laminas/laminas-view" : "^2.12 to use the view helper date components",
+    "laminas/laminas-hydrator" : "^3.2 to use the hydrator components"
   },
   "autoload": {
     "psr-4": {

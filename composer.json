@@ -1,5 +1,6 @@
 {
   "name": "alex-patterson-webdev/laminas-date-time",
+  "description": "Date and Time component module for the Laminas Framework",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "license": "MIT",
@@ -14,7 +15,7 @@
     "laminas/laminas-eventmanager" : "^3.3",
     "laminas/laminas-modulemanager" : "^2.10",
     "laminas/laminas-servicemanager" : "^3.0",
-    "alex-patterson-webdev/date-time": "^2",
+    "alex-patterson-webdev/date-time": "dev-feature/3.0.0",
     "alex-patterson-webdev/laminas-factory": "dev-feature/3.0.0"
   },
   "require-dev": {

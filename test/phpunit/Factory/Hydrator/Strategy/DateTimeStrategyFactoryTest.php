@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Factory\Hydrator\Strategy;
 
 use Arp\LaminasDateTime\Factory\Hydrator\Strategy\DateTimeStrategyFactory;
-use Interop\Container\ContainerInterface;
 use Laminas\Hydrator\Strategy\DateTimeFormatterStrategy;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 
 /**
  * @covers \Arp\LaminasDateTime\Factory\Hydrator\Strategy\DateTimeStrategyFactory

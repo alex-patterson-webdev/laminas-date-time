@@ -6,7 +6,9 @@ namespace Arp\LaminasDateTime\Factory\View\Helper;
 
 use Arp\LaminasDateTime\View\Helper\DateTimeHelper;
 use Arp\LaminasFactory\AbstractFactory;
-use Interop\Container\ContainerInterface;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
+use Laminas\ServiceManager\Exception\ServiceNotFoundException;
+use Psr\Container\ContainerInterface;
 
 /**
  * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
@@ -22,6 +24,9 @@ final class DateTimeHelperFactory extends AbstractFactory
      * @param array|null         $options
      *
      * @return DateTimeHelper
+     *
+     * @throws ServiceNotCreatedException
+     * @throws ServiceNotFoundException
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): DateTimeHelper
     {

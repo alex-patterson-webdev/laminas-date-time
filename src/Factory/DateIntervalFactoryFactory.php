@@ -7,7 +7,7 @@ namespace Arp\LaminasDateTime\Factory;
 use Arp\DateTime\DateIntervalFactory;
 use Arp\DateTime\Factory\DateIntervalFactoryFactory as ArpDateIntervalFactoryFactory;
 use Arp\LaminasFactory\AbstractFactory;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * @author  Alex Patterson <alex.patterson.webdev@gmail.com>

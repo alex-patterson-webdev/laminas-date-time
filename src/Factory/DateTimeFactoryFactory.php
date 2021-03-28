@@ -8,8 +8,9 @@ use Arp\DateTime\DateTimeFactory;
 use Arp\DateTime\Factory\DateTimeFactoryFactory as ArpDateTimeFactoryFactory;
 use Arp\Factory\Exception\FactoryException;
 use Arp\LaminasFactory\AbstractFactory;
-use Interop\Container\ContainerInterface;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
+use Laminas\ServiceManager\Exception\ServiceNotFoundException;
+use Psr\Container\ContainerInterface;
 
 /**
  * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
@@ -27,6 +28,7 @@ final class DateTimeFactoryFactory extends AbstractFactory
      * @noinspection PhpMissingParamTypeInspection
      *
      * @throws ServiceNotCreatedException
+     * @throws ServiceNotFoundException
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null): DateTimeFactory
     {

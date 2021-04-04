@@ -30,7 +30,7 @@ final class DateTimeFactoryFactory extends AbstractFactory
      * @throws ServiceNotCreatedException
      * @throws ServiceNotFoundException
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): DateTimeFactory
+    public function __invoke(ContainerInterface $container, string $requestedName, array $options = null): DateTimeFactory
     {
         $options = $options ?? $this->getServiceOptions($container, $requestedName);
 

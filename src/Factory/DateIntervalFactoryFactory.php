@@ -24,7 +24,7 @@ final class DateIntervalFactoryFactory extends AbstractFactory
      *
      * @noinspection PhpMissingParamTypeInspection
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): DateIntervalFactory
+    public function __invoke(ContainerInterface $container, string $requestedName, array $options = null): DateIntervalFactory
     {
         return (new ArpDateIntervalFactoryFactory())->create();
     }

@@ -28,7 +28,7 @@ final class DateTimeHelperFactory extends AbstractFactory
      * @throws ServiceNotCreatedException
      * @throws ServiceNotFoundException
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): DateTimeHelper
+    public function __invoke(ContainerInterface $container, string $requestedName, array $options = null): DateTimeHelper
     {
         $options = $options ?? $this->getServiceOptions($container, $requestedName, 'view_helpers');
 

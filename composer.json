@@ -1,6 +1,6 @@
 {
   "name": "alex-patterson-webdev/laminas-date-time",
-  "description": "Date and Time component module for the Laminas Framework",
+  "description": "Laminas Framework integration module for Arp\\DateTime",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "license": "MIT",
@@ -14,14 +14,17 @@
     "php": ">=7.4 || >=8.0",
     "laminas/laminas-eventmanager" : "^3.3",
     "laminas/laminas-modulemanager" : "^2.10",
-    "laminas/laminas-servicemanager" : "^3.0",
-    "alex-patterson-webdev/date-time": "dev-feature/3.0.0",
+    "laminas/laminas-servicemanager" : "^3.6",
+    "alex-patterson-webdev/date-time": "^0.4.0",
     "alex-patterson-webdev/laminas-factory": "dev-feature/3.0.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.5",
     "laminas/laminas-view": "^2.12",
-    "laminas/laminas-hydrator" : "^3.2"
+    "laminas/laminas-hydrator" : "^3.2",
+    "phpunit/phpunit": "^9.5",
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpstan/phpstan": ">=0.12",
+    "friendsofphp/php-cs-fixer": "^2.18"
   },
   "suggest": {
     "laminas/laminas-view" : "^2.12 to use the view helper date components",
@@ -34,14 +37,35 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "ArpTest\\LaminasDateTime\\": "test/phpunit/"
+      "ArpTest\\LaminasDateTime\\": "test/unit/"
     }
   },
   "scripts": {
-    "test": "php vendor/bin/phpunit --coverage-clover=coverage.xml"
+    "arp:test": [
+      "@arp:check",
+      "@arp:lint",
+      "@arp:analyse",
+      "@arp:unit-test-with-coverage"
+    ],
+    "arp:test-dev": [
+      "@arp:check",
+      "@arp:lint",
+      "@arp:fix",
+      "@arp:analyse-max",
+      "@arp:unit-test"
+    ],
+    "arp:check": "php vendor/bin/phpcs -s --standard=phpcs.xml --colors src/ test/",
+    "arp:lint": "php vendor/bin/php-cs-fixer fix --dry-run --verbose --config=.php_cs.dist",
+    "arp:fix": "php vendor/bin/php-cs-fixer fix --config=.php_cs.dist",
+    "arp:analyse": "php vendor/bin/phpstan analyse src/ test/ --level=7",
+    "arp:analyse-max": "php vendor/bin/phpstan analyse src/ test/ --level=8",
+    "arp:unit-test": "php vendor/bin/phpunit",
+    "arp:unit-test-with-coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "php vendor/bin/phpunit --coverage-clover=test/coverage/clover.xml"
+    ]
   },
   "config": {
-    "preferred-install": "dist",
     "optimize-autoloader": true,
     "sort-packages": true
   }

@@ -9,6 +9,8 @@ use Laminas\View\Helper\HelperInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * @covers  \Arp\LaminasDateTime\View\Helper\DateTimeHelper
+ *
  * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
  * @package ArpTest\LaminasDateTime\View\Helper
  */
@@ -16,8 +18,6 @@ final class DateTimeHelperTest extends TestCase
 {
     /**
      * Assert that the view helper implements HelperInterface.
-     *
-     * @covers \Arp\LaminasDateTime\View\Helper\DateTimeHelper::__construct
      */
     public function testImplementsHelperInterface(): void
     {
@@ -27,9 +27,7 @@ final class DateTimeHelperTest extends TestCase
     }
 
     /**
-     * Assert that when we pass NULL to DateTimeHelper::__invoke() that an empty string will be returned.
-     *
-     * @covers \Arp\LaminasDateTime\View\Helper\DateTimeHelper::__invoke
+     * Assert that when we pass NULL to DateTimeHelper::__invoke() that an empty string will be returned
      */
     public function testInvokeWillReturnEmptyStringForNullDateTime(): void
     {
@@ -40,13 +38,11 @@ final class DateTimeHelperTest extends TestCase
 
     /**
      * Assert that when calling __invoke() without a format option, the returned date time string will be formatted
-     * to the value provided when creating the class.
+     * to the value provided when creating the class
      *
      * @param string $format
      *
      * @dataProvider getInvokeWillFormatDateTimeAccordingToConstructorArgumentFormatData
-     *
-     * @covers \Arp\LaminasDateTime\View\Helper\DateTimeHelper::__invoke
      */
     public function testInvokeWillFormatDateTimeAccordingToConstructorArgumentFormat(string $format): void
     {
@@ -54,15 +50,11 @@ final class DateTimeHelperTest extends TestCase
 
         $dateTime = new \DateTime();
 
-        if (null === $format) {
-            $format = \DateTimeInterface::ATOM;
-        }
-
         $this->assertSame($dateTime->format($format), $helper($dateTime));
     }
 
     /**
-     * @return array
+     * @return array<mixed>
      */
     public function getInvokeWillFormatDateTimeAccordingToConstructorArgumentFormatData(): array
     {
@@ -80,8 +72,6 @@ final class DateTimeHelperTest extends TestCase
      * @param string $format
      *
      * @dataProvider getInvokeWillFormatDateTimeAccordingToOptionArgumentData
-     *
-     * @covers \Arp\LaminasDateTime\View\Helper\DateTimeHelper::__invoke
      */
     public function testInvokeWillFormatDateTimeAccordingToOptionArgument(string $format): void
     {
@@ -96,7 +86,7 @@ final class DateTimeHelperTest extends TestCase
     }
 
     /**
-     * @return array
+     * @return array<mixed>
      */
     public function getInvokeWillFormatDateTimeAccordingToOptionArgumentData(): array
     {

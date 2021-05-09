@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Factory\Hydrator\Strategy;
+namespace ArpTest\LaminasDateTime\Factory\Hydrator\Strategy;
 
+use Arp\DateTime\DateTimeFactory;
 use Arp\LaminasDateTime\Factory\Hydrator\Strategy\DateTimeStrategyFactory;
+use Arp\LaminasFactory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 use Laminas\Hydrator\Strategy\DateTimeFormatterStrategy;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
-use Laminas\ServiceManager\Factory\FactoryInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Arp\LaminasDateTime\Factory\Hydrator\Strategy\DateTimeStrategyFactory
+ * @covers  \Arp\LaminasDateTime\Factory\Hydrator\Strategy\DateTimeStrategyFactory
  *
  * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
- * @package Factory\Hydrator\Strategy
+ * @package ArpTest\LaminasDateTime\Factory\Hydrator\Strategy
  */
 final class DateTimeStrategyFactoryTest extends TestCase
 {
@@ -37,7 +38,7 @@ final class DateTimeStrategyFactoryTest extends TestCase
     {
         $factory = new DateTimeStrategyFactory();
 
-        /** @var ContainerInterface|MockObject $container */
+        /** @var ContainerInterface&MockObject $container */
         $container = $this->createMock(ContainerInterface::class);
 
         $requestedName = DateTimeFormatterStrategy::class;
@@ -68,10 +69,10 @@ final class DateTimeStrategyFactoryTest extends TestCase
                         // Missing format option
                     ],
                 ],
-            ]
+            ],
         ];
 
-        /** @var ContainerInterface|MockObject $container */
+        /** @var ContainerInterface&MockObject $container */
         $container = $this->createMock(ContainerInterface::class);
 
         $requestedName = DateTimeFormatterStrategy::class;
@@ -100,7 +101,7 @@ final class DateTimeStrategyFactoryTest extends TestCase
     /**
      * Assert that the __invoke() method will return a configured DateTimeStrategy
      *
-     * @param array|null $options
+     * @param array<mixed>|null $options
      *
      * @dataProvider getInvokeReturnsDateTimeStrategyData
      */
@@ -108,7 +109,7 @@ final class DateTimeStrategyFactoryTest extends TestCase
     {
         $factory = new DateTimeStrategyFactory();
 
-        /** @var ContainerInterface|MockObject $container */
+        /** @var ContainerInterface&MockObject $container */
         $container = $this->createMock(ContainerInterface::class);
 
         $requestedName = DateTimeFormatterStrategy::class;
@@ -118,10 +119,10 @@ final class DateTimeStrategyFactoryTest extends TestCase
                 'arp' => [
                     'services' => [
                         DateTimeFormatterStrategy::class => [
-                            'format' => \DateTime::RFC3339,
+                            'format' => \DateTimeInterface::RFC3339,
                         ],
                     ],
-                ]
+                ],
             ];
 
             $container->expects($this->once())->method('has')->with('config')->willReturn(true);
@@ -133,7 +134,7 @@ final class DateTimeStrategyFactoryTest extends TestCase
     }
 
     /**
-     * @return array
+     * @return array<mixed>
      */
     public function getInvokeReturnsDateTimeStrategyData(): array
     {
@@ -143,13 +144,13 @@ final class DateTimeStrategyFactoryTest extends TestCase
             ],
             [
                 [
-                    'format' => \DateTime::ATOM,
-                ]
+                    'format' => \DateTimeInterface::ATOM,
+                ],
             ],
             [
                 [
-                    'format' => \DateTime::RFC3339_EXTENDED,
-                ]
+                    'format' => \DateTimeInterface::RFC3339_EXTENDED,
+                ],
             ],
         ];
     }

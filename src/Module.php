@@ -11,7 +11,7 @@ namespace Arp\LaminasDateTime;
 final class Module
 {
     /**
-     * @return array
+     * @return array<mixed>
      */
     public function getConfig(): array
     {

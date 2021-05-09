@@ -17,7 +17,7 @@ return [
     'arp' => [
         'services' => [
             DateTimeFormatterStrategy::class => [
-                'format' => \DateTime::RFC3339,
+                'format' => \DateTimeInterface::RFC3339,
             ],
             'DayMonthYearFormattingStrategy' => [
                 'format' => 'd/m/Y',

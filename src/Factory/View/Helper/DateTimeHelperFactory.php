@@ -6,7 +6,7 @@ namespace Arp\LaminasDateTime\Factory\View\Helper;
 
 use Arp\LaminasDateTime\View\Helper\DateTimeHelper;
 use Arp\LaminasFactory\AbstractFactory;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
@@ -15,20 +15,21 @@ use Interop\Container\ContainerInterface;
 final class DateTimeHelperFactory extends AbstractFactory
 {
     /**
-     * @noinspection PhpMissingParamTypeInspection
-     *
-     * @param ContainerInterface $container
-     * @param string             $requestedName
-     * @param array|null         $options
+     * @param ContainerInterface        $container
+     * @param string                    $requestedName
+     * @param array<string, mixed>|null $options
      *
      * @return DateTimeHelper
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): DateTimeHelper
-    {
+    public function __invoke(
+        ContainerInterface $container,
+        string $requestedName,
+        array $options = null
+    ): DateTimeHelper {
         $options = $options ?? $this->getServiceOptions($container, $requestedName, 'view_helpers');
 
-        $format = $options['format'] ?? \DateTime::ATOM;
-
-        return new DateTimeHelper($format);
+        return new DateTimeHelper(
+            $options['format'] ?? \DateTimeInterface::ATOM
+        );
     }
 }

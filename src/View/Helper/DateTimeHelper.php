@@ -27,7 +27,7 @@ class DateTimeHelper extends AbstractHelper
 
     /**
      * @param \DateTimeInterface|null $dateTime
-     * @param array          $options
+     * @param array<string, mixed>    $options
      *
      * @return string
      */

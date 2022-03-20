@@ -12,7 +12,7 @@ A Date and Time component module for the Laminas Framework.
 
 Installation via [composer](https://getcomposer.org).
 
-    require alex-patterson-webdev/laminas-date-time ^0.1
+    require alex-patterson-webdev/laminas-date-time ^0.2
     
 In order integrate with Laminas MVC, please add the module namespace to the `modules.config.php` of your laminas application.
         

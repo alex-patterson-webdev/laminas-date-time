@@ -36,8 +36,8 @@ final class DateTimeFactoryFactory extends AbstractFactory
 
         try {
             return new DateTimeFactory(
-                $options['date_time_class_name'] ?? null,
-                $options['date_time_zone_class_name'] ?? null
+                $options['date_time_zone_factory'] ?? null,
+                $options['date_time_class_name'] ?? null
             );
         } catch (DateTimeFactoryException $e) {
             throw new ServiceNotCreatedException(

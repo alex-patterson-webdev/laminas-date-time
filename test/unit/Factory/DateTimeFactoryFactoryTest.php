@@ -7,6 +7,7 @@ namespace ArpTest\LaminasDateTime\Factory;
 use Arp\DateTime\DateTimeFactory;
 use Arp\LaminasDateTime\Factory\DateTimeFactoryFactory;
 use Arp\LaminasFactory\FactoryInterface;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerExceptionInterface;
@@ -43,7 +44,7 @@ final class DateTimeFactoryFactoryTest extends TestCase
         $container = $this->createMock(ContainerInterface::class);
 
         /** @noinspection UnnecessaryAssertionInspection */
-        $this->assertInstanceOf(DateTimeFactory::class, $factory($container, DateTimeFactory::class));
+        $this->assertInstanceOf(DateTimeFactory::class, $factory($container, DateTimeFactory::class, []));
     }
 
     /**
@@ -62,6 +63,9 @@ final class DateTimeFactoryFactoryTest extends TestCase
         $options = [
             'date_time_class_name' => \stdClass::class,
         ];
+
+        $this->expectException(ServiceNotCreatedException::class);
+        $this->expectExceptionMessage('Failed to create date time factory:');
 
         $factory($container, DateTimeFactory::class, $options);
     }

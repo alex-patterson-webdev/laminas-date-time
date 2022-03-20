@@ -25,7 +25,7 @@
     "phpstan/phpstan": "^1.4.8",
     "friendsofphp/php-cs-fixer": "^3.6.0",
     "laminas/laminas-view": "^2.12",
-    "laminas/laminas-hydrator" : "^3.2"
+    "laminas/laminas-hydrator" : "^4.3.1"
   },
   "suggest": {
     "laminas/laminas-view" : "^2.12 to use the view helper date components",

@@ -6,7 +6,7 @@
 
 ## About
 
-A Date and Time component module for the Laminas Framework.
+A Laminas Framework integration module for [Arp\DateTime](https://github.com/alex-patterson-webdev/date-time) components.
 
 ## Installation
 

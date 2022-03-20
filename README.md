@@ -22,11 +22,6 @@ In order integrate with Laminas MVC, please add the module namespace to the `mod
         'Arp\\LaminasDateTime',
     ];
 
-## Components
-  
-- A `CurrentDateTimeProvider` service abstracts the creation of `\DateTimeInterface` instances.
-- A `DateTimeHelper` view helper allowing date time objects to be rendered consistently in view scripts.
-
 ## Unit Tests
 
 PHP Unit test using PHPUnit.

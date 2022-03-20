@@ -8,6 +8,7 @@ use Arp\DateTime\DateTimeFactory;
 use Arp\DateTime\Exception\DateTimeFactoryException;
 use Arp\LaminasFactory\AbstractFactory;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
+use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -24,6 +25,7 @@ final class DateTimeFactoryFactory extends AbstractFactory
      * @return DateTimeFactory
      *
      * @throws ServiceNotCreatedException
+     * @throws ContainerExceptionInterface
      */
     public function __invoke(
         ContainerInterface $container,

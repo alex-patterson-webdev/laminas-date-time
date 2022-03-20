@@ -6,9 +6,9 @@ namespace Arp\LaminasDateTime\Factory\Hydrator\Strategy;
 
 use Arp\LaminasFactory\AbstractFactory;
 use Laminas\Hydrator\Strategy\DateTimeFormatterStrategy;
-use Laminas\Hydrator\Strategy\Exception\InvalidArgumentException;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Laminas\ServiceManager\Exception\ServiceNotFoundException;
+use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -26,6 +26,7 @@ final class DateTimeStrategyFactory extends AbstractFactory
      *
      * @throws ServiceNotCreatedException
      * @throws ServiceNotFoundException
+     * @throws ContainerExceptionInterface
      */
     public function __invoke(
         ContainerInterface $container,
@@ -44,14 +45,6 @@ final class DateTimeStrategyFactory extends AbstractFactory
             );
         }
 
-        try {
-            return new DateTimeFormatterStrategy($format, $options['timezone'] ?? null, $options['fallback'] ?? false);
-        } catch (InvalidArgumentException $e) {
-            throw new ServiceNotCreatedException(
-                sprintf('Failed to create date time strategy \'%s\': %s', $requestedName, $e->getMessage()),
-                $e->getCode(),
-                $e
-            );
-        }
+        return new DateTimeFormatterStrategy($format, $options['timezone'] ?? null, $options['fallback'] ?? false);
     }
 }

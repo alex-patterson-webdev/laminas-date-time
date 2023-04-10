@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/alex-patterson-webdev/laminas-date-time.svg?branch=master)](https://travis-ci.com/alex-patterson-webdev/laminas-date-time)
+![github workflow](https://github.com/alex-patterson-webdev/laminas-date-time/actions/workflows/workflow.yml/badge.svg)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alex-patterson-webdev/laminas-date-time/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alex-patterson-webdev/laminas-date-time/?branch=master)
 [![codecov](https://codecov.io/gh/alex-patterson-webdev/laminas-date-time/branch/master/graph/badge.svg)](https://codecov.io/gh/alex-patterson-webdev/laminas-date-time)
 
@@ -12,7 +12,7 @@ A Laminas Framework integration module for [Arp\DateTime](https://github.com/ale
 
 Installation via [composer](https://getcomposer.org).
 
-    require alex-patterson-webdev/laminas-date-time ^0.2
+    require alex-patterson-webdev/laminas-date-time ^0.3
     
 In order integrate with Laminas MVC, please add the module namespace to the `modules.config.php` of your laminas application.
         

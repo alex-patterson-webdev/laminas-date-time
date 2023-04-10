@@ -15,9 +15,6 @@ use Psr\Container\ContainerInterface;
 
 /**
  * @covers  \Arp\LaminasDateTime\Factory\DateTimeFactoryFactory
- *
- * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
- * @package ArpTest\LaminasDateTime\Factory
  */
 final class DateTimeFactoryFactoryTest extends TestCase
 {

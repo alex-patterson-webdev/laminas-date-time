@@ -13,9 +13,6 @@ use Psr\Container\ContainerInterface;
 
 /**
  * @covers \Arp\LaminasDateTime\Factory\DateIntervalFactoryFactory
- *
- * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
- * @package ArpTest\LaminasDateTime\Factory
  */
 final class DateIntervalFactoryFactoryTest extends TestCase
 {

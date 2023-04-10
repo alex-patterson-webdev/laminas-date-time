@@ -6,23 +6,10 @@ namespace Arp\LaminasDateTime\View\Helper;
 
 use Laminas\View\Helper\AbstractHelper;
 
-/**
- * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
- * @package Arp\LaminasDateTime\View\Helper
- */
 class DateTimeHelper extends AbstractHelper
 {
-    /**
-     * @var string
-     */
-    private string $format;
-
-    /**
-     * @param string $format
-     */
-    public function __construct(string $format)
+    public function __construct(private readonly string $format)
     {
-        $this->format = $format;
     }
 
     /**

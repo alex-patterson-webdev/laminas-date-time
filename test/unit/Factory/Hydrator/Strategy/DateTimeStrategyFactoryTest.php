@@ -15,9 +15,6 @@ use Psr\Container\ContainerExceptionInterface;
 
 /**
  * @covers  \Arp\LaminasDateTime\Factory\Hydrator\Strategy\DateTimeStrategyFactory
- *
- * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
- * @package ArpTest\LaminasDateTime\Factory\Hydrator\Strategy
  */
 final class DateTimeStrategyFactoryTest extends TestCase
 {

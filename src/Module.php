@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Arp\LaminasDateTime;
 
-/**
- * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
- * @package Arp\LaminasDateTime
- */
 final class Module
 {
     /**

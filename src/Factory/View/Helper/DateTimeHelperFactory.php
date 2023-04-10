@@ -6,20 +6,13 @@ namespace Arp\LaminasDateTime\Factory\View\Helper;
 
 use Arp\LaminasDateTime\View\Helper\DateTimeHelper;
 use Arp\LaminasFactory\AbstractFactory;
+use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 
-/**
- * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
- * @package Arp\LaminasDateTime\Factory\View\Helper
- */
 final class DateTimeHelperFactory extends AbstractFactory
 {
     /**
-     * @param ContainerInterface        $container
-     * @param string                    $requestedName
-     * @param array<string, mixed>|null $options
-     *
-     * @return DateTimeHelper
+     * @throws ContainerExceptionInterface
      */
     public function __invoke(
         ContainerInterface $container,

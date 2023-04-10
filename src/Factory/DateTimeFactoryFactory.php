@@ -11,19 +11,9 @@ use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 
-/**
- * @author  Alex Patterson <alex.patterson.webdev@gmail.com>
- * @package Arp\LaminasDateTime\Factory
- */
 final class DateTimeFactoryFactory extends AbstractFactory
 {
     /**
-     * @param ContainerInterface $container
-     * @param string             $requestedName
-     * @param array<mixed>|null  $options
-     *
-     * @return DateTimeFactory
-     *
      * @throws ServiceNotCreatedException
      * @throws ContainerExceptionInterface
      */

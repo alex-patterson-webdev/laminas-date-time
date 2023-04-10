@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "630f8ff4bd1c68cdd7d608221dcbdf92",
+    "content-hash": "751e8509c695c867ac09940fdb932b99",
     "packages": [
         {
             "name": "alex-patterson-webdev/date-time",
@@ -5247,7 +5247,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4 || >=8.0"
+        "php": ">=8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"

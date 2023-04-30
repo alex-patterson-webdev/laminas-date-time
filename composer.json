@@ -15,8 +15,8 @@
     "laminas/laminas-eventmanager" : "^3.3.0",
     "laminas/laminas-modulemanager" : "^2.10.0",
     "laminas/laminas-servicemanager" : "^3.6.0",
-    "alex-patterson-webdev/date-time": "^0.5.0",
-    "alex-patterson-webdev/laminas-factory": "^3.0.0"
+    "alex-patterson-webdev/date-time": "^0.6.0",
+    "alex-patterson-webdev/laminas-factory": "^4.0.0"
   },
   "require-dev": {
     "laminas/laminas-view": "^2.12",
@@ -31,7 +31,7 @@
   },
   "suggest": {
     "laminas/laminas-view" : "^2.12 to use the view helper date components",
-    "laminas/laminas-hydrator" : "^3.2 to use the hydrator components"
+    "laminas/laminas-hydrator" : "^4.3 to use the hydrator components"
   },
   "autoload": {
     "psr-4": {
@@ -41,6 +41,11 @@
   "autoload-dev": {
     "psr-4": {
       "ArpTest\\LaminasDateTime\\": "test/unit/"
+    }
+  },
+  "extra": {
+    "laminas": {
+      "component": "Arp\\LaminasDateTime"
     }
   },
   "scripts": {

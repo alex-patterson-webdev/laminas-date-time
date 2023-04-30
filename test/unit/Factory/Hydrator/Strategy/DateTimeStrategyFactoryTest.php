@@ -6,12 +6,12 @@ namespace ArpTest\LaminasDateTime\Factory\Hydrator\Strategy;
 
 use Arp\LaminasDateTime\Factory\Hydrator\Strategy\DateTimeStrategyFactory;
 use Arp\LaminasFactory\FactoryInterface;
-use Interop\Container\ContainerInterface;
 use Laminas\Hydrator\Strategy\DateTimeFormatterStrategy;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * @covers  \Arp\LaminasDateTime\Factory\Hydrator\Strategy\DateTimeStrategyFactory

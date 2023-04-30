@@ -14,7 +14,7 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 
 /**
- * @covers  \Arp\LaminasDateTime\Factory\DateTimeFactoryFactory
+ * @covers \Arp\LaminasDateTime\Factory\DateTimeFactoryFactory
  */
 final class DateTimeFactoryFactoryTest extends TestCase
 {

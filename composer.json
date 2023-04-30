@@ -43,6 +43,11 @@
       "ArpTest\\LaminasDateTime\\": "test/unit/"
     }
   },
+  "extra": {
+    "laminas": {
+      "component": "Arp\\LaminasDateTime"
+    }
+  },
   "scripts": {
     "arp:test": [
       "@arp:check",

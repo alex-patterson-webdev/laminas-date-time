@@ -4,34 +4,32 @@ declare(strict_types=1);
 
 namespace Arp\LaminasDateTime\Factory;
 
-use Arp\DateTime\DateTimeFactory;
-use Arp\DateTime\Exception\DateTimeFactoryException;
+use Arp\DateTime\DateTimeZoneFactory;
+use Arp\DateTime\Exception\DateTimeZoneFactoryException;
 use Arp\LaminasFactory\AbstractFactory;
 use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 
-final class DateTimeFactoryFactory extends AbstractFactory
+final class DateTimeZoneFactoryFactory extends AbstractFactory
 {
     /**
-     * @throws ServiceNotCreatedException
      * @throws ContainerExceptionInterface
      */
     public function __invoke(
         ContainerInterface $container,
         string $requestedName,
         array $options = null
-    ): DateTimeFactory {
+    ): DateTimeZoneFactory {
         $options = $options ?? $this->getServiceOptions($container, $requestedName, 'laminas_date_time');
 
         try {
-            return new DateTimeFactory(
-                $options['date_time_zone_factory'] ?? null,
-                $options['class_name'] ?? null
+            return new DateTimeZoneFactory(
+                $options['class_name'] ?? \DateTimeZone::class,
             );
-        } catch (DateTimeFactoryException $e) {
+        } catch (DateTimeZoneFactoryException $e) {
             throw new ServiceNotCreatedException(
-                sprintf('Failed to create date time factory \'%s\'', $requestedName),
+                sprintf('Failed to create date time zone factory \'%s\'', $requestedName),
                 $e->getCode(),
                 $e,
             );

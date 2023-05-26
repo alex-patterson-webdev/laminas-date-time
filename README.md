@@ -12,7 +12,7 @@ A Laminas Framework integration module for [Arp\DateTime](https://github.com/ale
 
 Installation via [composer](https://getcomposer.org).
 
-    require alex-patterson-webdev/laminas-date-time ^0.3
+    require alex-patterson-webdev/laminas-date-time ^0.5
     
 In order integrate with Laminas MVC, please add the module namespace to the `modules.config.php` of your laminas application.
         

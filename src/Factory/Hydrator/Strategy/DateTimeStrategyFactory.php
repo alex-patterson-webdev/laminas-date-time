@@ -23,7 +23,7 @@ final class DateTimeStrategyFactory extends AbstractFactory
         string $requestedName,
         array $options = null
     ): DateTimeFormatterStrategy {
-        $options = $options ?? $this->getServiceOptions($container, $requestedName);
+        $options = $options ?? $this->getServiceOptions($container, $requestedName, 'laminas_date_time');
 
         $format = $options['format'] ?? null;
         if (null === $format) {

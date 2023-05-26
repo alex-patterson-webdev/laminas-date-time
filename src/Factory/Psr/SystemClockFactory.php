@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Arp\LaminasDateTime\Factory\Psr;
+
+use Arp\DateTime\Psr\SystemClock;
+use Arp\LaminasFactory\AbstractFactory;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\ContainerInterface;
+
+final class SystemClockFactory extends AbstractFactory
+{
+    /**
+     * @throws ContainerExceptionInterface
+     */
+    public function __invoke(ContainerInterface $container, string $requestedName, array $options = null): SystemClock
+    {
+        $options = $options ?? $this->getServiceOptions($container, $requestedName, 'laminas_date_time');
+
+        if (empty($options['factory'])) {
+            throw new ServiceNotCreatedException(
+                sprintf('The required \'factory\' configuration option is missing for service \'%s\'', $requestedName),
+            );
+        }
+
+        return new SystemClock(
+            $this->getService($container, $options['factory'], $requestedName),
+        );
+    }
+}

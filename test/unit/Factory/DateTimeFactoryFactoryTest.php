@@ -58,12 +58,14 @@ final class DateTimeFactoryFactoryTest extends TestCase
         $container = $this->createMock(ContainerInterface::class);
 
         $options = [
-            'date_time_class_name' => \stdClass::class,
+            'class_name' => \stdClass::class,
         ];
 
-        $this->expectException(ServiceNotCreatedException::class);
-        $this->expectExceptionMessage('Failed to create date time factory:');
+        $requestedName = DateTimeFactory::class;
 
-        $factory($container, DateTimeFactory::class, $options);
+        $this->expectException(ServiceNotCreatedException::class);
+        $this->expectExceptionMessage(sprintf('Failed to create date time factory \'%s\'', $requestedName));
+
+        $factory($container, $requestedName, $options);
     }
 }

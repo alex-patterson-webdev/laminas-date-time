@@ -72,7 +72,7 @@ final class DateTimeStrategyFactoryTest extends TestCase
 
         $applicationConfig = [
             'arp' => [
-                'services' => [
+                'laminas_date_time' => [
                     DateTimeFormatterStrategy::class => [
                         // Missing format option
                     ],
@@ -121,7 +121,7 @@ final class DateTimeStrategyFactoryTest extends TestCase
         if (null === $options) {
             $applicationConfig = [
                 'arp' => [
-                    'services' => [
+                    'laminas_date_time' => [
                         DateTimeFormatterStrategy::class => [
                             'format' => \DateTimeInterface::RFC3339,
                         ],
